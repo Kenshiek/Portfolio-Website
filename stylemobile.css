@@ -1,0 +1,796 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+ scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: black;
+    color: lightgrey;
+    min-height: 100vh;
+    line-height: 1.5;
+}
+/* GRADIENT */
+.image-gradient {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.layer-blur {
+    height: 0;
+    width: 30rem;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    box-shadow: 0 0 700px 15px white;
+    rotate: -30deg;
+    z-index: -1;
+}
+
+/* CONTAINER */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    z-index: 999;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-left: -5%;
+    z-index: 999;
+}
+
+nav a {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    transition: color 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+nav a:hover {
+    color: aqua;
+}
+
+/* CONTACT BUTTON */
+.contactbtn {
+    position: relative;
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    border: 3px solid transparent;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(225, 225, 225, 0.3);
+    transition: color 0.3s ease;
+}
+
+.contactbtn::before {
+    content: "";
+    position: absolute;
+    inset: 0.5px;
+    background-color: black;
+    border-radius: 50px;
+    z-index: 0;
+}
+
+.contactbtn span {
+    position: relative;
+    z-index: 1;
+}
+
+.contactbtn:hover {
+    color: magenta;
+    background: linear-gradient(to right, gray, magenta, magenta, gray, gray);
+    background-size: 200%;
+    animation: animationGradient 2.5s linear infinite;
+}
+
+/* MAIN CONTENT */
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(90vh - 6rem);
+}
+
+.content {
+    max-width: 40rem;
+    margin-left: 10%;
+    z-index: 999;
+}
+
+.tag-box {
+    position: relative;
+    width: 18rem;
+    height: 2.5rem;
+    border-radius: 50px;
+    background: linear-gradient(to right, gray, magenta, magenta, gray, gray, gray);
+    background-size: 200%;
+    animation: animationGradient 2.5s linear infinite;
+    box-shadow: 0 0 15px rgba(225, 225, 225, 0.3);
+}
+
+@keyframes animationGradient {
+    to {
+        background-position: 200%;
+    }
+}
+
+.tag-box .tag {
+    position: absolute;
+    inset: 3px 3px 3px 3px;
+    background-color: black;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.tag-box .tag:hover {
+    color: magenta;
+}
+
+.content h1 {
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    margin: 2rem 0;
+    line-height: 1.2;
+    text-shadow: 0 0 10px rgba(128, 128, 128, 0.418);
+}
+
+.description {
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    max-width: 35rem;
+    color: gray;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-get-started {
+    text-decoration: none;
+    border: 1px solid #2a2a2a;
+    padding: 0.7rem 1.2rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    transition: background-color 0.2s ease;
+}
+
+.btn-get-started:hover {
+    background-color: #1a1a1a;
+}
+
+/* CONTACT BUTTON (MAIN) */
+.btn-signing-main {
+    position: relative;
+    text-decoration: none;
+    color: white;
+    padding: 0.8rem 2.5rem;
+    border-radius: 50px;
+    border: 3px solid transparent;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(225, 225, 225, 0.3);
+    transition: color 0.3s ease;
+}
+
+.btn-signing-main::before {
+    content: "";
+    position: absolute;
+    inset: 0.5px;
+    background-color: black;
+    border-radius: 50px;
+    z-index: 0;
+}
+
+.btn-signing-main span {
+    position: relative;
+    z-index: 1;
+}
+
+.btn-signing-main:hover {
+    color: magenta;
+    background: linear-gradient(to right, gray, magenta, magenta, gray, gray);
+    background-size: 200%;
+    animation: animationGradient 2.5s linear infinite;
+}
+
+/* SPLINE VIEWER */
+.kenshiek3d {
+    position: absolute;
+    top: 10%;
+    right: -20%;
+}
+
+
+
+/* ===== HAMBURGER MENU ===== */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        background: rgba(0, 0, 0, 0.95);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1.5rem 0;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    header {
+        position: relative;
+    }
+}
+
+/* TABLET RESPONSIVENESS */
+@media (max-width: 1300px){
+    header{
+        padding: 1rem 0.5rem;
+    }
+    .content{
+        margin-top: 85%;
+    }
+
+    .kenshiek3d{
+        scale: 0.8;
+        top: -20%;
+        right: 2%;
+
+    }
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px){
+    header{
+        padding: 1rem 0.1rem;
+    }
+
+    nav{
+        display: none;
+    }
+    
+    header h1{
+        font-size: 2rem;
+    }
+
+    .btn-signing-main{
+        padding: 0.6rem 1.5rem;
+    }
+
+    .content{
+        margin-top: 25rem;
+    }
+
+    .kenshiek3d{
+        scale: 0.5;
+        top: -25%;
+        right: 0;
+    }
+
+    .content{
+        max-width: 30rem;
+        margin-left: 10%;
+    }
+
+    .tag-box{
+        width: 12rem;
+    }
+
+    .content h1{
+        font-size: 2.5rem;
+    }
+
+    .description{
+        font-size: 1rem;
+    }
+
+    .btn-get-started{
+        font-size: 0.8rem;
+        padding: 0.5rem 1.2rem;
+    }
+
+    .btn-signing-main{
+        font-size: 0.8rem;
+        padding: 0.8rem 2rem;
+    }
+}
+
+/* SECTION 2 PAGE */
+.section2bg {
+    background: no-repeat ;
+    z-index: -1;
+    max-width: 100% ;
+    position: absolute;
+}
+
+.section25bg {
+    background: no-repeat ;
+    z-index: -1;
+    max-width: 100% ;
+    position: absolute;
+}
+
+.aboutme {
+    padding: 100px 0;
+    width: 85%;
+    margin: auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+}
+
+.about-image img {
+    width: 500px;
+    height: auto;   
+    border-radius: 50px;
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.about-text {
+    flex: 1;
+    color: white;
+}
+
+.about-text h2 {
+    font-size: 26px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.about-text h3 {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.resume-btn {
+    margin-top: 20px;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.resume-btn:hover {
+    background: white;
+    color: black;
+}
+
+
+
+/* ----------- RESPONSIVE ----------- */
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-image img {
+        width: 250px;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+}
+
+/* ----------- PAGE 2.5 ----------- */
+.experiencetitle {
+text-align: right;
+margin-right: 200px;
+font-size: 25px;
+    margin-bottom: 20px;
+    letter-spacing: 6px;
+}
+
+.experienceline {
+  height: 2px;
+    background-color: #e5e5e5;
+    margin: 8px 180px;
+    border-radius: 10px;
+    width: 25%; 
+    float: right;
+}
+
+.experienceline2 {
+    background-color: #e5e5e5;
+    margin: 8px 180px;
+    border-radius: 10px;
+    width: 35%; 
+    float: right;
+}
+
+.gpro {
+font-size: 15px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    margin-left: 230px;
+}
+
+.gpro p {
+    font-size: 20px;
+}
+
+.experienceline3 {
+  height: 2px;
+    background-color: #e5e5e5;
+    margin: 8px 0px;
+    border-radius: 10px;
+    width: 35%; 
+    float: left;
+}
+
+.experienceline4 {
+    background-color: #e5e5e5;
+    margin: 5px 0px;
+    border-radius: 10px;
+    width: 25%; 
+    float: left;
+}
+
+/* SKILLS SECTION - HORIZONTAL LAYOUT */
+.section3 {
+    text-align: center;
+    font-size: 30px;
+    padding: 50px 20px;
+    width: 100%;
+}
+
+.iconsskills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    list-style: none;
+    padding: 0;
+}
+
+.skill-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.skill-icon:hover {
+    transform: translateY(-5px);
+}
+
+.iconsskills img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.iconsskills h4 {
+    margin: 0;
+    font-size: 16px;
+    color: white;
+    font-weight: 500;
+}
+/* ===== MINIMAL RESPONSIVE FIXES ===== */
+
+/* Fix for very large screens */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+/* Fix for tablet screens (768px - 1300px) */
+@media (max-width: 1300px) and (min-width: 769px) {
+    .content {
+        margin-top: 2rem !important;
+    }
+    
+    .kenshiek3d {
+        scale: 0.9;
+        top: 5% !important;
+        right: -5% !important;
+    }
+}
+
+/* Fix for mobile screens */
+@media (max-width: 768px) {
+    .content {
+        margin-top: 2rem !important;
+        margin-left: 5% !important;
+        text-align: center;
+    }
+    
+    .kenshiek3d {
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        scale: 0.7;
+        margin: 2rem auto;
+        display: block;
+    }
+    
+    .aboutme {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 50px 5%;
+        width: 95%;
+    }
+    
+    .about-image img {
+        width: 300px;
+    }
+    
+    .about-text {
+        text-align: center;
+    }
+    
+    .experiencetitle {
+        text-align: center;
+        margin-right: 0;
+    }
+    
+    .experienceline,
+    .experienceline2 {
+        float: none;
+        margin: 8px auto;
+    }
+    
+    .experienceline3,
+    .experienceline4 {
+        float: none;
+        margin: 8px auto;
+    }
+    
+    .gpro {
+        margin-left: 0;
+        text-align: center;
+        padding: 0 20px;
+    }
+}
+
+/* Fix for very small mobile screens */
+@media (max-width: 480px) {
+    header {
+        padding: 1rem;
+    }
+    
+    .content h1 {
+        font-size: 2rem;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .about-image img {
+        width: 250px;
+    }
+    
+    .iconsskills {
+        gap: 20px;
+    }
+    
+    .iconsskills img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Ensure images don't overflow */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== CONTACT BUTTON & 3D MODEL FIXES ===== */
+
+/* Fix Contact Me button on smaller screens */
+@media (max-width: 768px) {
+    .contactbtn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        margin-left: auto;
+    }
+    
+    /* Adjust header layout for mobile */
+    header {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    /* Make buttons stack properly */
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+    
+    .btn-get-started,
+    .btn-signing-main {
+        width: 200px;
+        text-align: center;
+        font-size: 1rem;
+        padding: 0.7rem 1.5rem;
+    }
+}
+
+/* Make 3D model bigger and better positioned */
+@media (max-width: 1300px) and (min-width: 769px) {
+    .kenshiek3d {
+        scale: 1 !important;
+        top: 5% !important;
+        right: -10% !important;
+        width: 700px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .kenshiek3d {
+        scale: 0.8 !important;
+        width: 100%;
+        max-width: 400px;
+        height: 300px;
+        margin: 1rem auto;
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+    }
+}
+
+/* Fix for very small mobile screens */
+@media (max-width: 480px) {
+    .contactbtn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+    
+    .kenshiek3d {
+        scale: 0.7 !important;
+        max-width: 350px;
+        height: 250px;
+    }
+}
+
+/* Ensure navbar doesn't get blocked */
+@media (max-width: 768px) {
+    nav.active {
+        top: 80px; /* Push menu down below header */
+    }
+}
+/* ===== STABLE SPLINE MODEL FIX ===== */
+
+/* Tablet screens - keep model visible but properly positioned */
+@media (max-width: 1300px) and (min-width: 769px) {
+    .kenshiek3d {
+        transform: scale(1) !important;
+        top: 15% !important;
+        right: -15% !important;
+        position: absolute !important;
+    }
+    
+    .content {
+        margin-top: 2rem !important;
+        z-index: 10;
+    }
+}
+
+/* Mobile screens - make model part of content flow */
+@media (max-width: 768px) {
+    .kenshiek3d {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        left: auto !important;
+        transform: scale(0.8) !important;
+        width: 100% !important;
+        max-width: 400px !important;
+        height: 300px !important;
+        margin: 2rem auto !important;
+        display: block !important;
+    }
+    
+    .content {
+        margin-top: 2rem !important;
+        margin-left: 5% !important;
+        margin-right: 5% !important;
+    }
+}
+
+/* Very small mobile screens */
+@media (max-width: 480px) {
+    .kenshiek3d {
+        transform: scale(0.7) !important;
+        max-width: 350px !important;
+        height: 250px !important;
+        margin: 1rem auto !important;
+    }
+}
